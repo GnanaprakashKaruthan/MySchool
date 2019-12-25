@@ -21,5 +21,21 @@ public class SpringController {
 		model.addAttribute(userVO);
 		return "test";
 	}
+	
+	@RequestMapping("/about")
+	public String aboutUs() {
+		return "header/about";
+	}
+	
+	@RequestMapping("/slideShow")
+	public String slideShow() {
+		return "header/slideShow";
+	}
+	
+	@RequestMapping("/successStories")
+	public String successStories() {
+		return "helpers/successStories";
+	}
+	
 
 }

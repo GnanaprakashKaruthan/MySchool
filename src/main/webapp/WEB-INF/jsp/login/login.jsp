@@ -8,102 +8,51 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #4CAF50;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-/* Add padding to containers */
-.container {
-	padding: 16px;
-	padding-bottom: 640px;
-	background-color: white;
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-	width: 100%;
-	padding: 15px;
-	margin: 5px 0 22px 0;
-	display: inline-block;
-	border: none;
-	background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-	background-color: #ddd;
-	outline: none;
-}
-
-/* Overwrite default styles of hr */
-hr {
-	border: 1px solid #f1f1f1;
-	margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-	background-color: #4CAF50;
-	color: white;
-	padding: 16px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-	opacity: 0.9;
-	font-weight: bold;
-    font-size: large;
-}
-
-.registerbtn:hover {
-	opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-	color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-	background-color: #f1f1f1;
-	text-align: center;
-}
-</style>
+<link href="/css/login.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<title>Login</title>
+<jsp:include page="../header/title.jsp"></jsp:include>
+<script src="/js/main.js"></script>
 </head>
 <body>
+	<div class="centre-body">
+		<jsp:include page="../header/header.jsp"></jsp:include>
+		<br> <br> <br>
+		<p class="maths">Special Maths coaching on Calculus, Linear
+			Algebra, Probability, Statistics, and Optimization</p>
+		<img src="/images/slides/new/maths_practise.gif"> <br> <br>
+		<br>
+		<div class="container-login">
+			<form:form methodParam="LoginVO" action="/loginAction" method="post" onsubmit="return validateEmail()" >
+				<h2>Log in</h2>
+				<span style="color: red">* </span>
+				<span>All the fields are mandatory</span>
+				<hr>
 
-	<form:form methodParam="LoginVO" action="/loginAction" method="post">
-		<div class="container">
-			<h2>Log into Your Profile</h2>
-			<p>Please Login by entering your UserName and Password</p>
-			<hr>
-			
-			<label for="email"><b>Email</b></label> 
-			<input type="text" placeholder="Enter Email" name="email" required> 
-			
-			<label for="psw"><b>Password</b></label> 
-			<input type="password" placeholder="Enter Password" name="password" required>
-			
-			<button type="submit" class="registerbtn">Login</button>
+				<label for="email"><b>Email</b></label>
+				<input type="text" placeholder="Enter your Email" name="email" id="email"
+					required>
+				<br>
+
+				<label for="psw"><b>Password</b></label>
+				<input type="password" placeholder="Enter your Password"
+					name="password" required>
+				<br>
+				<input type="submit" value="Login" class="login-submit" >
+				<p class="forgot-password">
+					<a href="#">Forgot Password</a>
+				</p>
+			</form:form>
 		</div>
-		<hr>
-<!-- 		<div class="container signin">
+		<br>
+		<br>
+		<br>
+		<div class="footer-border">
 			<p>
-				Don't have an account, click here to register? <a
-					href="/forwardToregister">Register</a>.
+				Don't have an account? <a href="/register">Sign Up</a> here.
 			</p>
-		</div> -->
-	</form:form>
-	<div class="container signin">
-			<p>
-				Back to <a	href="/">home</a>.
-			</p>
+			<jsp:include page="../header/footer.jsp"></jsp:include>
 		</div>
+	</div>
 </body>
 </html>

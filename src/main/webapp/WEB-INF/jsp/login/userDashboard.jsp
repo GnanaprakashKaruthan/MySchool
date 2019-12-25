@@ -8,93 +8,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #4CAF50;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-/* Add padding to containers */
-.container {
-	padding: 16px;
-	padding-bottom: 640px;
-	background-color: white;
-}
-
-/* Add padding to containers */
-.container-logout {
-	font-weight:bold;
-	font-color: white;
-	font-size: medium;
-	background-color: #4CAF50;
-	margin-left: 1250px;
-}
-
-.container-welcome {
-	font-weight:bold;
-	font-color: white;
-	font-size: medium;
-	background-color: #4CAF50;
-	margin-left: 0px;
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-	width: 100%;
-	padding: 15px;
-	margin: 5px 0 22px 0;
-	display: inline-block;
-	border: none;
-	background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-	background-color: #ddd;
-	outline: none;
-}
-
-/* Overwrite default styles of hr */
-hr {
-	border: 1px solid #f1f1f1;
-	margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-	background-color: #4CAF50;
-	color: white;
-	padding: 16px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-	opacity: 0.9;
-	font-weight: bold;
-    font-size: large;
-}
-
-.registerbtn:hover {
-	opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-	color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-	background-color: #f1f1f1;
-	text-align: center;
-}
-
-
-
-</style>
+<link href="/css/module.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
 
@@ -102,21 +17,22 @@ a {
 		<div class="container">
 		
 		<c:choose>
-    		<c:when test="${isAdminUser eq true}">
+    		<%-- <c:when test="${isAdminUser eq true}">
+        	<jsp:include page = "../admin/adminMainPage.jsp" />
+    		</c:when> --%>  
+    		<c:when test="${page eq 'myAccountPage'}">
         	<jsp:include page = "../admin/adminMainPage.jsp" />
     		</c:when>
+    		
     		<c:otherwise>
-        	You are Student
+        	<jsp:include page = "../success.jsp" />
     		</c:otherwise>
 		</c:choose>
-		
-		
-		
 		</div>
-	<div class="container signin">
-			<p>
-				Back to <a	href="/">home</a>.
-			</p>
-		</div>
+		
+	<div class="footer-border">
+			<jsp:include page="../header/footer.jsp"></jsp:include><br>
+			<img src="/images/icons/fb-icon.gif">&nbsp;<a href="https://www.facebook.com/gnanaprakashkaruthanmathur" target="_blank">Contributor</a>
+	</div>
 </body>
 </html>

@@ -4,9 +4,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RegisterVO {
-	private String email;
-	private String password;
-	private String repeatPassword;
 	private String firstName;
 	private String lastName;
 	private String addressLine1;
@@ -15,30 +12,6 @@ public class RegisterVO {
 	private String addressLine4;
 	private String addressLine5;
 	private int zipcode;
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getRepeat_password() {
-		return repeatPassword;
-	}
-
-	public void setRepeat_password(String repeat_password) {
-		this.repeatPassword = repeat_password;
-	}
 
 	public String getFirstName() {
 		return firstName;

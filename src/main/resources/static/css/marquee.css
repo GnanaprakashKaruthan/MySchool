@@ -1,0 +1,44 @@
+.main-font {
+	text-align: center;
+	font-family: "Times New Roman";
+}
+
+.marq-size {
+	margin-top: 10px;
+	margin-left: 250px;
+	height: 80px;
+	width: 400px;
+	font-size: 14px;
+}
+
+.marquee-column1 {
+	text-align: center;
+}
+
+.marquee-column2 {
+	text-align: center;
+}
+
+.marquee-column3 {
+	text-align: center;
+}
+
+.glow {
+	font-size: 14px;
+	color: white;
+	text-align: center;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {from { text-shadow:0010px#eaea12, 0010px#eaea12,
+	0010px#eaea12, 0010px#eaea12, 0010px#eaea12, 0010px#eaea12, 0010px#eaea12;
+	
+}
+
+to {
+	text-shadow: 0 0 10px #fff, 0 0 10px #f20d0d, 0 0 10px #f20d0d, 0 0 10px
+		#f20d0d, 0 0 10px #f20d0d, 0 0 10px #f20d0d, 0 0 10px #f20d0d;
+}
+}

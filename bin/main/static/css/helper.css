@@ -1,0 +1,31 @@
+.thoughts {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 17px;
+	line-height: 1.5;
+	color: #074069;
+	font-weight: normal;
+	height: 735px;
+	border: 1px solid #4d5254;
+	padding: 5px;
+	background-color: #ebf2f7;
+	border-radius: 25px;
+}
+
+.signature {
+	float: right;
+	color: #20272b;
+	font-weight: bold;
+	line-height: 0.1;
+}
+
+.heading-banner1 {
+	border: 1px solid grey;
+	width: 100%;
+	background-color: #c5dce6;
+}
+
+.heading-banner2 {
+	margin-left: 50px;
+	margin-top: 10px;
+}
+

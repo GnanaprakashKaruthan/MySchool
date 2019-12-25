@@ -8,22 +8,14 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link href="/css/index.css" rel="stylesheet">
 </head>
 <body>
 
-	
-		My message ======== ${message}
-		<div class="container">
-			<a href="logout">Log Out</a>
-		</div>
+			<p> You are Student </p>
+        	<p>Only Admin can access to modify your details </p>
+        	Click here to <a href="/">Log Out</a>
 
-		<!-- <div class="container signin">
-			<p>
-				Don't have an account, click here to register? <a
-					href="/forwardToregister">Register</a>.
-			</p>
-		</div> -->
-	
+
 </body>
 </html>

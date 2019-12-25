@@ -2,6 +2,7 @@ package com.school.main.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.school.main.vo.EmailVO;
 import com.school.main.vo.LoginVO;
 import com.school.main.vo.UserVO;
 
@@ -14,24 +15,25 @@ public class UserDetailsDAO {
 //	@Autowired
 //	LoginVO login
 
-	public UserVO getUserDetailsByEmailId(String email) {
+	public UserVO getUserDetailsByEmailId(EmailVO emailVO) {
 		userVO = new UserVO();
-		userVO.setEmail(email);
+		userVO.setEmail(emailVO.getEmail());
 		// remove this
-		userVO.setPassword("Test@123");
+		userVO.setPassword(emailVO.getPassword());
 		userVO.setUserId(111);
+		userVO.setUserName("Dummy Name");
 		// remove this
-		if (email.equals(adminEmail)) {
+		if (emailVO.getEmail().equals(adminEmail)) {
 			userVO.setAdminUser(true);
 		} else {
 			userVO.setAdminUser(false);
 		}
 		return userVO;
 	}
-	
+
 	public UserVO getUserDetails(LoginVO login) {
 		userVO = new UserVO();
-		
+
 		if (login.getEmail().equals(adminEmail)) {
 			userVO.setAdminUser(true);
 		} else {

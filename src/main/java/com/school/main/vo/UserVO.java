@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class UserVO {
 	private String email;
 	private int userId;
+	private String userName;
 	private String password;
 	private boolean isAdminUser;
 
@@ -39,6 +40,14 @@ public class UserVO {
 
 	public void setAdminUser(boolean isAdminUser) {
 		this.isAdminUser = isAdminUser;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 }

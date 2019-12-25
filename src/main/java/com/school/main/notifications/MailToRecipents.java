@@ -17,21 +17,21 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-//import org.springframework.ui.Model;
 import com.sun.mail.util.MailSSLSocketFactory;
 
 public class MailToRecipents {
 
-	public static String sendEmail() throws AddressException, MessagingException, IOException {
+	public static String sendEmail(String email, String name) throws AddressException, MessagingException, IOException {
 		try {
-			sendmail();
+			sendmail(email, name);
 		} catch (GeneralSecurityException e) {
 			e.printStackTrace();
 		}
 		return "successful";
 	}
 
-	private static void sendmail() throws AddressException, MessagingException, IOException, GeneralSecurityException {
+	private static void sendmail(String email, String name)
+			throws AddressException, MessagingException, IOException, GeneralSecurityException {
 		Properties props = new Properties();
 
 		// to ignore cert issue
@@ -46,16 +46,23 @@ public class MailToRecipents {
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
+				// return new PasswordAuthentication("programmingcafe2020@gmail.com",
+				// "Test@123");
 				return new PasswordAuthentication("programmingcafe2020@gmail.com", "Test@123");
 			}
 		});
 
 		Message msg = new MimeMessage(session);
-		msg.setFrom(new InternetAddress("programmingcafe2020@gmail.com", false));
+		msg.setFrom(new InternetAddress("noreply@bharathischool.com", false));
 
-		msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("ramyanr420@gmail.com"));
-		msg.setSubject("Tutorials point email");
-		msg.setContent("Tutorials point email", "text/html");
+		msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+		msg.setSubject("Registration is successfull");
+		msg.setContent("Dear " + name + ",\n" + "Welcome School of Excellence"
+				+ "Your registration is successfull!\n\n\n"
+				+ "Thanks & Regards\n"
+				+ "Bharathi School of Excellence\n\n\n"
+				+ "Note: This is system generated email, no need to reply for this email\n"
+				, "text/html");
 		msg.setSentDate(new Date());
 
 		MimeBodyPart messageBodyPart = new MimeBodyPart();

@@ -1,0 +1,81 @@
+.about-right {
+	border: 3px solid #ff0000;
+	margin-top: 60px;
+	margin-left: 240px;
+	font-wieght: normal;
+	font-size: small;
+}
+
+.index-signup-text {
+	margin-top: -35px;
+	float: right;
+}
+
+.index-signup-button {
+	float: right;
+	height: auto;
+	width: 130px;
+}
+
+.index-login-text {
+	width: 300px;
+}
+
+.index-login-button {
+	float: left;
+	height: auto;
+	width: 120px;
+}
+
+.wrapper {
+	margin: 0px;
+}
+
+.column1 {
+	height: 10px;
+	width: 500px;
+	border: 1px solid blue;
+	float: left;
+}
+
+.column2 {
+	height: 364px;
+	width: 530px;
+	border: 1px solid black;
+	font-size: 15px;
+	color: blue;
+	font-family: "Calibri";
+	float: right:
+    padding: 5px;
+}
+
+.index-container {
+	width: 100%;
+}
+
+.container-slide {
+	height: 100px;
+	width: 500px;
+}
+
+.show-the-slides {
+	width: 700px;
+	margin: 10px 0px 0px 300px;
+	border: 1px solid blue;
+}
+
+.thoughts-for-the-day {
+	height: 310px;
+	width: 500px;
+	padding-left: 10px;
+	border: 1px solid blue;
+	background-color: lightyellow;
+	float: right;
+}
+
+.centre-body {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	padding: 1px;
+}
